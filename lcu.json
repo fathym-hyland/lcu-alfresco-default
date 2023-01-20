@@ -9,5 +9,5 @@
     "SuccessType": "Project"
   },
   "EaC": "./assets/eac.json",
-  "Parametres": "./assets/parametres.json"
+  "Parameters": "./assets/parameters.json"
 }
