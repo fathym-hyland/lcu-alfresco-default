@@ -1,0 +1,13 @@
+{
+  "Package": {
+    "Name": "Alfresco Starter",
+    "Description": "A modular frontend example for Alfresco.",
+    "Button": "Launch Alfresco",
+    "Image": "https://www.fathym.com/img/hyland-alfresco-500x275.png",
+    "PreviewImage": "https://www.fathym.com/img/alfresco-logo.png",
+    "RecipeType": "MFE",
+    "SuccessType": "Project"
+  },
+  "EaC": "./assets/eac.json",
+  "Parameters": "./assets/parameters.json"
+}
