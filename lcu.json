@@ -1,5 +1,5 @@
 {
-  "package": {
+  "Package": {
     "Name": "Alfresco Starter",
     "Description": "A modular frontend example for Alfresco.",
     "Button": "Launch Alfresco",
@@ -8,6 +8,6 @@
     "RecipeType": "MFE",
     "SuccessType": "Project"
   },
-  "eac": "./assets/eac.json",
-  "parametres": "./assets/parametres.json"
+  "EaC": "./assets/eac.json",
+  "Parametres": "./assets/parametres.json"
 }
