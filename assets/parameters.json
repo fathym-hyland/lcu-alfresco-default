@@ -2,9 +2,5 @@
   "HOST_IP_VARIABLE": {
     "type": "input",
     "message": "Enter Alfresco host:"
-  },
-  "TEST": {
-    "type": "input",
-    "message": "Enter Alfresco host:"
   }
 }
