@@ -2,5 +2,9 @@
   "HOST_IP_VARIABLE": {
     "type": "input",
     "message": "Enter Alfresco host:"
+  },
+  "organization": {
+    "type": "input",
+    "message": "Enter GitHub organization:"
   }
 }
