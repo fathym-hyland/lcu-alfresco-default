@@ -78,7 +78,7 @@
     }
   },
   "Environments": {
-    "$#primary": {
+    "$#.PrimaryEnvironment": {
       "Artifacts": {
         "plasmic-build-release": {
           "Name": "Plasmic Build/Release",
