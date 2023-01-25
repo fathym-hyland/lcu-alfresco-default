@@ -113,8 +113,8 @@
       "Clouds": {
         "azure": {
           "Cloud": {
-            "Name": ,
-            "AppAuthKey":,
+            "Name": "",
+            "AppAuthKey":"",
             "ResourceGroups": {
               "fathym-cloud-prd": {
                 "Resources": {
