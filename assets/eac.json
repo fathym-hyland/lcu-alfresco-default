@@ -1,102 +1,124 @@
 {
   "Applications": {
-    "API": [
-      {
-        "Application": {
-          "Application": {
-            "Description": "Alfresco API",
-            "Name": "Alfresco API"
-          },
-          "LookupConfig": {
-            "PathRegex": "/alfresco.*"
-          },
-          "LowCodeUnit": {
-            "APIRoot": "{{HOST_IP_VARIABLE}}",
-            "Security": "~"
-          },
-          "ModifierLookups": null,
-          "Processor": {
-            "InboundPath": "/alfresco"
-          }
-        }
+    "$1": {
+      "Application": {
+        "Description": "Alfresco API",
+        "Name": "Alfresco API"
+      },
+      "LookupConfig": {
+        "PathRegex": "/alfresco.*"
+      },
+      "LowCodeUnit": {
+        "APIRoot": "{{HOST_IP_VARIABLE}}",
+        "Security": "~",
+        "Type": "API"
+      },
+      "ModifierLookups": null,
+      "Processor": {
+        "InboundPath": "/alfresco",
+        "Type": "Proxy"
       }
-    ],
-    "NPM": [
-      {
-        "Application": {
-          "Application": {
-            "Description": "Alfresco ADF Default",
-            "Name": "Alfresco ADF Default"
-          },
-          "LookupConfig": {
-            "PathRegex": "/dashboard.*"
-          },
-          "LowCodeUnit": {
-            "Package": "@fathym-hyland/alfresco-default",
-            "Version": "latest"
-          },
-          "Processor": {
-            "BaseHref": "/dashboard/",
-            "DefaultFile": "index.html"
-          }
-        }
+    },
+    "$2": {
+      "Application": {
+        "Description": "Alfresco ADF Default",
+        "Name": "Alfresco ADF Default"
+      },
+      "LookupConfig": {
+        "PathRegex": "/dashboard.*"
+      },
+      "LowCodeUnit": {
+        "Package": "@fathym-hyland/alfresco-default",
+        "Version": "latest",
+        "Type": "NPM"
+      },
+      "Processor": {
+        "BaseHref": "/dashboard/",
+        "DefaultFile": "index.html",
+        "Type": "DFS"
       }
-    ],
-    "GitHub": [
-      {
-        "Application": {
-          "Application": {
-            "Description": "Custom application for @fathym-hyland/hyland-homepage-gatsby@main to deploy Fathym Hyland Landing Page",
-            "Name": "Fathym Hyland Landing Page"
-          },
-          "LookupConfig": {
-            "PathRegex": "/.*"
-          },
-          "LowCodeUnit": {
-            "SourceControlLookup": "hyland-homepage-gatsby",
-            "Build": "latest"
-          },
-          "Processor": {
-            "BaseHref": "/",
-            "DefaultFile": "index.html"
-          }
-        },
-        "DevOpsArtifact": {
-          "Output": "./public",
-          "BuildCommand": "npm run build",
-          "InstallCommand": "npm i"
-        }
+    },
+    "$3": {
+      "Application": {
+        "Description": "Custom application for @fathym-hyland/hyland-homepage-gatsby@main to deploy Fathym Hyland Landing Page",
+        "Name": "Fathym Hyland Landing Page"
+      },
+      "LookupConfig": {
+        "PathRegex": "/.*"
+      },
+      "LowCodeUnit": {
+        "SourceControlLookup": "hyland-homepage-gatsby",
+        "Build": "latest",
+        "Type": "GitHub"
+      },
+      "Processor": {
+        "BaseHref": "/",
+        "DefaultFile": "index.html",
+        "Type": "DFS"
       }
-    ],
-    "SPA": [
-      {
-        "Application": {
-          "AccessRightLookups": null,
-          "Application": {
-            "Description": "Alfresco Admin",
-            "Name": "Alfresco Admin",
-            "Priority": 15000
-          },
-          "LookupConfig": {
-            "PathRegex": "/admin/alfresco.*"
-          },
-          "LowCodeUnit": {
-            "SPARoot": "{{HOST_IP_VARIABLE}}",
-            "Build": "latest"
-          },
-          "Processor": {
-            "InboundPath": "admin/alfresco"
-          }
-        }
+    },
+    "$4": {
+      "AccessRightLookups": null,
+      "Application": {
+        "Description": "Alfresco Admin",
+        "Name": "Alfresco Admin",
+        "Priority": 15000
+      },
+      "LookupConfig": {
+        "PathRegex": "/admin/alfresco.*"
+      },
+      "LowCodeUnit": {
+        "SPARoot": "{{HOST_IP_VARIABLE}}",
+        "Type": "SPA"
+      },
+      "Processor": {
+        "InboundPath": "admin/alfresco",
+        "Type": "Proxy"
       }
-    ]
+    }
   },
-  "Sources": {
-    "hyland-homepage-gatsby": {
-      "Branches": ["main"],
-      "MainBranch": "main",
-      "Organization": "fathym-hyland",
-      "Repository": "hyland-homepage-gatsby"
+  "Environments": {
+    "$#primary": {
+      "Artifacts": {
+        "plasmic-build-release": {
+          "Name": "Plasmic Build/Release",
+          "Output": "./public",
+          "Type": "GitHub",
+          "BuildCommand": "npm run build",
+          "InstallCommand": "npm i",
+          "NPMRegistry": "https://registry.npmjs.org/"
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-plasmic": {
+          "Name": "GitHub Artifacts - Release - Plasmic",
+          "Path": "lcu-github-plasmic-artifacts-release.yml",
+          "ArtifactLookups": ["plasmic-build-release"],
+          "Templates": [
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/plasmic-artifacts/_header.hbs.yml",
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/plasmic-artifacts/release-flow.yml"
+          ]
+        }
+      },
+      "Sources": {
+        "github://fathym-hyland/hyland-homepage-gatsby": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-plasmic"],
+          "Branches": ["main"],
+          "MainBranch": "main",
+          "Organization": "fathym-hyland",
+          "Repository": "hyland-homepage-gatsby",
+          "Type": "GitHub"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "$#project": {
+      "ApplicationLookups": ["$1", "$2", "$3", "$4"],
+      "Project": {
+        "Name": "Alfresco Starter",
+        "Description": "Alfresco Starter"
+      }
     }
   }
 }
