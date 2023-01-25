@@ -114,11 +114,7 @@
   },
   "Projects": {
     "$#project": {
-      "ApplicationLookups": ["$1", "$2", "$3", "$4"],
-      "Project": {
-        "Name": "Alfresco Starter",
-        "Description": "Alfresco Starter"
-      }
+      "ApplicationLookups": ["$1", "$2", "$3", "$4"]
     }
   }
 }
