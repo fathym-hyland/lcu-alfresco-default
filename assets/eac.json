@@ -109,20 +109,6 @@
           "Repository": "hyland-homepage-gatsby",
           "Type": "GitHub"
         }
-      },
-      "Clouds": {
-        "azure": {
-          "Cloud": {
-            "Name": "",
-            "AppAuthKey":"",
-            "ResourceGroups": {
-              "fathym-cloud-prd": {
-                "Resources": {
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
