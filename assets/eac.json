@@ -40,14 +40,14 @@
     },
     "$3": {
       "Application": {
-        "Description": "Custom application for @fathym-hyland/hyland-homepage-gatsby@main to deploy Fathym Hyland Landing Page",
+        "Description": "Custom application fork of @fathym-hyland/hyland-homepage-gatsby@main to deploy Fathym Hyland Landing Page",
         "Name": "Fathym Hyland Landing Page"
       },
       "LookupConfig": {
         "PathRegex": "/.*"
       },
       "LowCodeUnit": {
-        "SourceControlLookup": "github://fathym-hyland/hyland-homepage-gatsby",
+        "SourceControlLookup": "fork|github://fathym-hyland/hyland-homepage-gatsby",
         "Build": "latest",
         "Type": "GitHub"
       },
@@ -101,7 +101,7 @@
         }
       },
       "Sources": {
-        "github://fathym-hyland/hyland-homepage-gatsby": {
+        "fork|github://fathym-hyland/hyland-homepage-gatsby": {
           "DevOpsActionTriggerLookups": ["github-artifacts-release-plasmic"],
           "Branches": ["main"],
           "MainBranch": "main",
