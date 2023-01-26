@@ -13,7 +13,6 @@
         "Security": "~",
         "Type": "API"
       },
-      "ModifierLookups": null,
       "Processor": {
         "InboundPath": "/alfresco",
         "Type": "Proxy"
@@ -58,7 +57,6 @@
       }
     },
     "$4": {
-      "AccessRightLookups": null,
       "Application": {
         "Description": "Alfresco Admin",
         "Name": "Alfresco Admin"
