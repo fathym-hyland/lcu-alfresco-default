@@ -72,6 +72,25 @@
         "InboundPath": "admin/alfresco",
         "Type": "Proxy"
       }
+    },
+    "$5": {
+      "Application": {
+        "Description": "Hyland Flow Storybook",
+        "Name": "Hyland Flow Storybook"
+      },
+      "LookupConfig": {
+        "PathRegex": "/qa/storybooks/hyland-flow.*"
+      },
+      "LowCodeUnit": {
+        "Package": "@fathym-hyland/hyland-flow-storybook",
+        "Version": "latest",
+        "Type": "NPM"
+      },
+      "Processor": {
+        "BaseHref": "/qa/storybooks/hyland-flow/",
+        "DefaultFile": "index.html",
+        "Type": "DFS"
+      }
     }
   },
   "Environments": {
