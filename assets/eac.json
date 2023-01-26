@@ -61,8 +61,7 @@
       "AccessRightLookups": null,
       "Application": {
         "Description": "Alfresco Admin",
-        "Name": "Alfresco Admin",
-        "Priority": 15000
+        "Name": "Alfresco Admin"
       },
       "LookupConfig": {
         "PathRegex": "/admin/alfresco.*"
