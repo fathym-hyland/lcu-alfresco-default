@@ -9,7 +9,7 @@
   "homepage": "https://github.com/fathym-hyland/lcu-alfresco-default#readme",
   "main": "lcu.json",
   "scripts": {
-    "deploy": "fathym git && npm version patch && npm publish --access public"
+    "deploy": "fathym git && npm version patch && npm publish --access public && fathym git"
   },
   "repository": {
     "type": "git",
