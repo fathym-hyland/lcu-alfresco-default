@@ -47,6 +47,7 @@
       },
       "LowCodeUnit": {
         "SourceControlLookup": "fork|github://fathym-it/hyland-homepage-gatsby",
+        "Name":"Landing Page LCU",
         "Build": "latest",
         "Path": "lcu-github-plasmic-artifacts-release.yml",
         "Type": "GitHub"
