@@ -125,6 +125,7 @@
           "MainBranch": "main",
           "Organization": "fathym-it",
           "Repository": "hyland-homepage-gatsby",
+          "Name": "github://fathym-it/hyland-homepage-gatsby",
           "Type": "GitHub"
         }
       }
