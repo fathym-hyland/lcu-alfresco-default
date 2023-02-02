@@ -47,8 +47,7 @@
         "PathRegex": "/.*"
       },
       "LowCodeUnit": {
-        "SourceControlLookup": "hyland-homepage-gatsby",
-        "Name":"Landing Page LCU",
+        "SourceControlLookup": "fork|github://fathym-it/hyland-homepage-gatsby",        
         "Build": "latest",
         "Type": "GitHub"
       },
