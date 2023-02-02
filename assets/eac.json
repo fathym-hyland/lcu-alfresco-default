@@ -47,7 +47,8 @@
         "PathRegex": "/.*"
       },
       "LowCodeUnit": {
-        "SourceControlLookup": "fork|github://fathym-it/hyland-homepage-gatsby",        
+        "SourceControlLookup": "fork|github://fathym-it/hyland-homepage-gatsby",
+        "Path": "lcu-github-plasmic-artifacts-release.yml",        
         "Build": "latest",
         "Type": "GitHub"
       },
