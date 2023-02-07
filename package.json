@@ -1,6 +1,6 @@
 {
   "name": "@fathym-hyland/lcu-alfresco-default",
-  "version": "0.0.10",
+  "version": "0.0.26",
   "description": "A LowCodeUnit for creating an Alfresco Angular ADF site for customization.",
   "author": "Fathym, Inc",
   "bugs": {
@@ -9,7 +9,7 @@
   "homepage": "https://github.com/fathym-hyland/lcu-alfresco-default#readme",
   "main": "lcu.json",
   "scripts": {
-    "deploy": "fathym git && npm version patch && npm publish --access public"
+    "deploy": "fathym git && npm version patch && npm publish --access public && fathym git"
   },
   "repository": {
     "type": "git",
