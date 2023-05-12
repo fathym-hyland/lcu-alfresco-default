@@ -51,7 +51,7 @@
         "Name": "Fathym Hyland Landing Page"
       },
       "LookupConfig": {
-        "PathRegex": "/.*"
+        "PathRegex": "/home.*"
       },
       "Package": {
         "Details": {
@@ -63,7 +63,7 @@
       },
       "Processor": {
         "Details": {
-          "BaseHref": "/",
+          "BaseHref": "/home",
           "DefaultFile": "index.html"
         },
         "Type": "DFSProcessor"
@@ -75,7 +75,7 @@
         "Name": "Alfresco Admin"
       },
       "LookupConfig": {
-        "PathRegex": "/admin/alfresco.*"
+        "PathRegex": "/.*"
       },
       "Package": {
         "Details": {
@@ -86,7 +86,7 @@
       },
       "Processor": {
         "Details": {
-          "InboundPath": "/alfresco"
+          "InboundPath": "/"
         },
         "Type": "ProxyProcessor"
       }
