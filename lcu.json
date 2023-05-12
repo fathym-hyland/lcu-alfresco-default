@@ -3,7 +3,19 @@
     "Name": "Alfresco Starter",
     "Description": "A modular frontend example for Alfresco.",
     "Image": "https://www.fathym.com/img/hyland-alfresco-500x275.png",
-    "PreviewImage": "https://www.fathym.com/img/alfresco-logo.png",
-    "UsesGit": true
+    "PreviewImage": "https://www.fathym.com/img/alfresco-logo.png"
+  },
+  "Configurations": {
+    "Full": {
+      "Name": "Alfresco Starter",
+      "Description": "A modular frontend example for Alfresco.",
+      "Phases": [
+        {
+          "Name": "Setup Alfresco Starter",
+          "Order": 1,
+          "Asset": "alfresco"
+        }
+      ]
+    }
   }
 }

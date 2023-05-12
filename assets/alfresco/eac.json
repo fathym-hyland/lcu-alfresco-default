@@ -1,0 +1,171 @@
+{
+  "Applications": {
+    "{{$1}}-alfresco-api": {
+      "Details": {
+        "Description": "Alfresco API",
+        "Name": "Alfresco API"
+      },
+      "LookupConfig": {
+        "PathRegex": "/alfresco.*"
+      },
+      "Package": {
+        "Details": {
+          "APIRoot": "{{HOST_IP_VARIABLE}}",
+          "Security": "~"
+        },
+        "Type": "APILowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "InboundPath": "/alfresco"
+        },
+        "Type": "ProxyProcessor"
+      }
+    },
+    "{{$2}}-alfresco-adf-default": {
+      "Details": {
+        "Description": "Alfresco ADF Default",
+        "Name": "Alfresco ADF Default"
+      },
+      "LookupConfig": {
+        "PathRegex": "/dashboard.*"
+      },
+      "Package": {
+        "Details": {
+          "Package": "@fathym-hyland/alfresco-default",
+          "Version": "latest"
+        },
+        "Type": "NPMLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/dashboard/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    },
+    "{{$3}}-hyland-homepage-gatsby": {
+      "Details": {
+        "Description": "Custom application fork of @fathym-it/hyland-homepage-gatsby@main to deploy Fathym Hyland Landing Page",
+        "Name": "Fathym Hyland Landing Page"
+      },
+      "LookupConfig": {
+        "PathRegex": "/.*"
+      },
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-plasmic-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/hyland-homepage-gatsby",
+        "Type": "GitHubLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    },
+    "{{$4}}-alfresco-admin": {
+      "Details": {
+        "Description": "Alfresco Admin",
+        "Name": "Alfresco Admin"
+      },
+      "LookupConfig": {
+        "PathRegex": "/admin/alfresco.*"
+      },
+      "Package": {
+        "Details": {
+          "APIRoot": "{{HOST_IP_VARIABLE}}",
+          "Security": "~"
+        },
+        "Type": "SPALowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "InboundPath": "/alfresco"
+        },
+        "Type": "ProxyProcessor"
+      }
+    },
+    "{{$5}}-hyland-flow-storybook": {
+      "Details": {
+        "Description": "Hyland Flow Storybook",
+        "Name": "Hyland Flow Storybook"
+      },
+      "LookupConfig": {
+        "PathRegex": "/qa/storybooks/hyland-flow.*"
+      },
+      "Package": {
+        "Details": {
+          "Package": "@fathym-hyland/hyland-flow-storybook",
+          "Version": "latest"
+        },
+        "Type": "NPMLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/qa/storybooks/hyland-flow/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    }
+  },
+  "Environments": {
+    "{{EaC.PrimaryEnvironment}}": {
+      "Artifacts": {
+        "plasmic-build-release": {
+          "Type": "GitHubArtifact",
+          "Details": {
+            "Name": "Plasmic Build/Release",
+            "Output": "./public",
+            "BuildCommand": "npm run build",
+            "InstallCommand": "npm i",
+            "NPMRegistry": "https://registry.npmjs.org/"
+          }
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-plasmic": {
+          "ArtifactLookups": ["plasmic-build-release"],
+          "Details": {
+            "Name": "GitHub Artifacts - Release - Plasmic",
+            "Path": "lcu-github-plasmic-artifacts-release.yml",
+            "Templates": [
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+            ]
+          }
+        }
+      },
+      "Sources": {
+        "fork|github://fathym-it/hyland-homepage-gatsby": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-plasmic"],
+          "Details": {
+            "Branches": ["main"],
+            "MainBranch": "main",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "hyland-homepage-gatsby",
+            "Name": "github://{{ORGANIZATION}}/hyland-homepage-gatsby"
+          },
+          "Type": "GitHubSourceControl"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "{{PROJECT_LOOKUP}}": {
+      "ApplicationLookups": [
+        "{{$1}}-alfresco-api",
+        "{{$2}}-alfresco-adf-default",
+        "{{$3}}-hyland-homepage-gatsby",
+        "{{$4}}-alfresco-admin",
+        "{{$5}}-hyland-flow-storybook"
+      ]
+    }
+  }
+}
