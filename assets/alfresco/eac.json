@@ -79,7 +79,7 @@
       },
       "Package": {
         "Details": {
-          "APIRoot": "{{HOST_IP_VARIABLE}}",
+          "SPARoot": "{{HOST_IP_VARIABLE}}",
           "Security": "~"
         },
         "Type": "SPALowCodeUnit"
