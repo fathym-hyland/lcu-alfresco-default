@@ -1,6 +1,6 @@
 {
   "name": "@fathym-hyland/lcu-alfresco-default",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "A LowCodeUnit for creating an Alfresco Angular ADF site for customization.",
   "author": "Fathym, Inc",
   "bugs": {
