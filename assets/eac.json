@@ -39,14 +39,14 @@
     },
     "$3": {
       "Application": {
-        "Description": "Custom application fork of @fathym-it/hyland-homepage-gatsby@main to deploy Fathym Hyland Landing Page",
-        "Name": "Fathym Hyland Landing Page"
+        "Description": "Custom application to deploy Fathym Alfresco Landing Page",
+        "Name": "Fathym Alfresco Landing Page"
       },
       "LookupConfig": {
         "PathRegex": "/home.*"
       },
       "LowCodeUnit": {
-        "SourceControlLookup": "fork|github://fathym-it/hyland-homepage-gatsby",    
+        "SourceControlLookup": "fork|github://fathym-it/landing-page-alfresco-launchpad",    
         "Build": "latest",
         "Path": "lcu-github-plasmic-artifacts-release.yml",
         "Type": "GitHub"
@@ -118,13 +118,13 @@
         }
       },
       "Sources": {
-        "fork|github://fathym-it/hyland-homepage-gatsby": {
+        "fork|github://fathym-it/landing-page-alfresco-launchpad": {
           "DevOpsActionTriggerLookups": ["github-artifacts-release-plasmic"],
           "Branches": ["main"],
           "MainBranch": "main",
           "Organization": "fathym-it",
-          "Repository": "hyland-homepage-gatsby",
-          "Name": "github://fathym-it/hyland-homepage-gatsby",
+          "Repository": "landing-page-alfresco-launchpad",
+          "Name": "github://fathym-it/landing-page-alfresco-launchpad",
           "Type": "GitHub"
         }
       }
