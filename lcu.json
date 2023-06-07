@@ -3,7 +3,13 @@
     "Name": "Alfresco Starter",
     "Description": "A modular frontend example for Alfresco.",
     "Image": "https://www.fathym.com/img/hyland-alfresco-500x275.png",
-    "PreviewImage": "https://www.fathym.com/img/alfresco-logo.png"
+    "PreviewImage": "https://www.fathym.com/img/alfresco-logo.png",
+    "Intents":[
+      "Alfresco",
+      "Getting started",
+      "Website",
+      "Application"
+    ]
   },
   "Configurations": {
     "Full": {
