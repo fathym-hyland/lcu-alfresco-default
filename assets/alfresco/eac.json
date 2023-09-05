@@ -158,6 +158,10 @@
   },
   "Projects": {
     "{{PROJECT_LOOKUP}}": {
+      "Details": {
+        "Name": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Name}}{{Details.Name}}{{/if}}{{else}}Alfresco Launch Pad{{/if}}",
+        "Description": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Description}}{{Details.Description}}{{/if}}{{else}}An Alfresco Development Framework (ADF) Angular starter app integrated with Alfresco as a content management solution.{{/if}}"
+      },
       "ApplicationLookups": [
         "{{$1}}-alfresco-api",
         "{{$2}}-alfresco-adf-default",

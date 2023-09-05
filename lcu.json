@@ -1,7 +1,7 @@
 {
   "Package": {
-    "Name": "Alfresco Starter",
-    "Description": "A modular frontend example for Alfresco.",
+    "Name": "Alfresco Launch Pad ",
+    "Description": "An Alfresco Development Framework (ADF) Angular starter app integrated with Alfresco as a content management solution.",
     "Image": "https://www.fathym.com/img/hyland-alfresco-500x275.png",
     "PreviewImage": "https://www.fathym.com/img/alfresco-logo.png",
     "Intents":[
@@ -13,11 +13,11 @@
   },
   "Configurations": {
     "Full": {
-      "Name": "Alfresco Starter",
-      "Description": "A modular frontend example for Alfresco.",
+      "Name": "Alfresco Launch Pad",
+      "Description": "An Alfresco Development Framework (ADF) Angular starter app integrated with Alfresco as a content management solution.",
       "Phases": [
         {
-          "Name": "Setup Alfresco Starter",
+          "Name": "Setting Up Alfresco Launch Pad",
           "Order": 1,
           "Asset": "alfresco"
         }
